@@ -4,6 +4,7 @@ import BearHistory from 'containers/BearHistory'
 import NewFlavours from 'containers/NewFlavours'
 import Features from 'containers/Features'
 import ChooseFlavour from 'containers/ChooseFlavour'
+import UsedCases from 'containers/UsedCases'
 
 const App = () => (
   <>
@@ -13,6 +14,7 @@ const App = () => (
     <NewFlavours />
     <Features />
     <ChooseFlavour />
+    <UsedCases />
   </>
 )
 
