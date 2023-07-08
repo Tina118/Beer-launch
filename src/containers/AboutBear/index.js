@@ -31,7 +31,7 @@ const Info = styled.div`
 `
 
 const AboutBear = () => (
-  <Section backgroundColor="#ffffff">
+  <Section backgroundColor="#95959517">
     <Flex style={{ width: '50%', position: 'relative' }} flexWrap="wrap">
       <img
         style={{

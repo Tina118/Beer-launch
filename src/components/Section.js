@@ -11,9 +11,9 @@ const Head = styled.div`
   height: 100%;
 `
 
-const Section = ({ backgroundColor, children , ...rest}) => (
+const Section = ({ backgroundColor = '', children, ...rest }) => (
   <HeaderSection>
-    <Head style={{ backgroundColor , ...rest }}>
+    <Head style={{ backgroundColor, ...rest }}>
       <Flex
         style={{
           maxWidth: '1300px',
