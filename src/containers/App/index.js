@@ -3,6 +3,7 @@ import AboutBear from 'containers/AboutBear'
 import BearHistory from 'containers/BearHistory'
 import NewFlavours from 'containers/NewFlavours'
 import Features from 'containers/Features'
+import ChooseFlavour from 'containers/ChooseFlavour'
 
 const App = () => (
   <>
@@ -11,6 +12,7 @@ const App = () => (
     <BearHistory />
     <NewFlavours />
     <Features />
+    <ChooseFlavour />
   </>
 )
 
