@@ -1,15 +1,7 @@
 import styled from 'styled-components'
 import { Flex } from 'rebass'
 
-const Head = styled.div`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding: 100px 0px;
-  background-color: #f3c242;
-`
+import Section from 'components/Section'
 
 const Title = styled.h5`
   font-weight: 400;
@@ -50,42 +42,36 @@ const Button = styled.button`
 `
 
 const Header = () => (
-  <>
-    <Head>
-      <Flex
-        style={{
-          maxWidth: '1300px',
-          marginRight: 'auto',
-          marginLeft: 'auto',
-          position: 'relative',
-        }}
-      >
-        <Flex style={{ width: '50%', position: 'relative' }} flexWrap="wrap">
-          <Title>Biergut Premium Beer</Title>
-          <Description>Introducing New Premium Flavors</Description>
-          <Info>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco.
-          </Info>
-          <Flex>
-            <Button style={{ background: 'black', color: 'white' }}>
-              Host a Party
-            </Button>
-            <Button>Restock your pub</Button>
-          </Flex>
-        </Flex>
-        <Flex style={{ width: '50%', position: 'relative' }} flexWrap="wrap" justifyContent='flex-end' alignItems="flex-end">
-            <img
-              decoding="async"
-              width="450"
-              height="575"
-              src="https://websitedemos.net/beer-launch-04/wp-content/uploads/sites/795/2021/04/hero-beer-bottles-3.png"
-            />
-        </Flex>
+  <Section backgroundColor="#f3c242">
+    <Flex style={{ width: '50%', position: 'relative' }} flexWrap="wrap">
+      <Title>Biergut Premium Beer</Title>
+      <Description>Introducing New Premium Flavors</Description>
+      <Info>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco.
+      </Info>
+      <Flex>
+        <Button style={{ background: 'black', color: 'white' }}>
+          Host a Party
+        </Button>
+        <Button>Restock your pub</Button>
       </Flex>
-    </Head>
-  </>
+    </Flex>
+    <Flex
+      style={{ width: '50%', position: 'relative' }}
+      flexWrap="wrap"
+      justifyContent="flex-end"
+      alignItems="flex-end"
+    >
+      <img
+        decoding="async"
+        width="450"
+        height="575"
+        src="https://websitedemos.net/beer-launch-04/wp-content/uploads/sites/795/2021/04/hero-beer-bottles-3.png"
+      />
+    </Flex>
+  </Section>
 )
 
 export default Header
