@@ -2,33 +2,7 @@ import styled from 'styled-components'
 import { Flex } from 'rebass'
 
 import Section from 'components/Section'
-
-const Title = styled.h5`
-  font-weight: 400;
-  font-size: 1.625rem;
-  line-height: 1.2em;
-  color: #3a3a3a;
-  margin: 0px;
-`
-
-const Description = styled.h1`
-  font-weight: 400;
-  font-size: 4.6875rem;
-  line-height: 1.2em;
-  color: #3a3a3a;
-  margin: 0;
-`
-
-const Info = styled.div`
-  padding: 0;
-  font-weight: 500;
-  font-size: 22px;
-  color: #54595f;
-  font-style: normal;
-  line-height: 30px;
-  word-wrap: break-word;
-  font-family: 'Agdasima', sans-serif;
-`
+import { H1, H5, Description } from 'components/Text'
 
 const Button = styled.button`
   font-family: 'Bungee', cursive;
@@ -44,13 +18,13 @@ const Button = styled.button`
 const Header = () => (
   <Section backgroundColor="#f3c242">
     <Flex style={{ width: '50%', position: 'relative' }} flexWrap="wrap">
-      <Title>Biergut Premium Beer</Title>
-      <Description>Introducing New Premium Flavors</Description>
-      <Info>
+      <H5>Biergut Premium Beer</H5>
+      <H1>Introducing New Premium Flavors</H1>
+      <Description>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco.
-      </Info>
+      </Description>
       <Flex>
         <Button style={{ background: 'black', color: 'white' }}>
           Host a Party

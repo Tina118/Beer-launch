@@ -1,12 +1,13 @@
 import Section from 'components/Section'
 import History from 'components/History'
 
+const years = [1974, 1985, 2005, 2023]
+
 const BearHistory = () => (
-  <Section backgroundColor="#95959517" marginTop='-100px'>
-    <History year={1974}/>
-    <History year={1985}/>
-    <History year={2005}/>
-    <History year={2023}/>
+  <Section backgroundColor="#95959517" marginTop="-100px">
+    {years.map((year) => (
+      <History year={year} key={year} />
+    ))}
   </Section>
 )
 

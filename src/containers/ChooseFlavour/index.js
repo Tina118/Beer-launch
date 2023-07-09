@@ -2,28 +2,7 @@ import styled from 'styled-components'
 import { Flex } from 'rebass'
 
 import Section from 'components/Section'
-
-const Title = styled.h2`
-  font-weight: 400;
-  font-size: 3.5rem;
-  line-height: 1.25em;
-  color: #3a3a3a;
-  margin: 0;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-`
-
-const Description = styled.div`
-  padding: 0;
-  font-weight: 500;
-  font-size: 25px;
-  color: #54595f;
-  font-style: normal;
-  line-height: 30px;
-  word-wrap: break-word;
-  font-family: 'Agdasima', sans-serif;
-  margin-bottom: 20px;
-`
+import { H2, Description } from 'components/Text'
 
 const Button = styled.button`
   font-family: 'Bungee', cursive;
@@ -49,13 +28,15 @@ const ChooseFlavour = () => (
       />
     </Flex>
     <Flex width="50%" flexDirection="column">
-      <Title>Choose your Flavour</Title>
-      <Description>
+      <H2 style={{ textTransform: 'uppercase', marginBottom: '20px' }}>
+        Choose your Flavour
+      </H2>
+      <Description style={{ fontSize: '25px', marginBottom: '20px' }}>
         Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec
         rutrum congue leo eget malesuada. Curabitur arcu erat, accumsan id
         imperdiet et, porttitor at sem.
       </Description>
-      <Description>
+      <Description style={{ fontSize: '25px', marginBottom: '20px' }}>
         Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan
         tincidunt. Cras ultricies ligula sed magna dictum porta. Cras ultricies
         ligula sed magna dictum porta. Donec sollicitudin molestie malesuada.

@@ -3,16 +3,7 @@ import { Flex } from 'rebass'
 
 import Crousel from 'components/Crousel'
 import Section from 'components/Section'
-
-const Title = styled.h3`
-  color: #3a3a3a;
-  text-transform: 'uppercase';
-  line-height: 1.2em;
-  margin: 0;
-  font-size: 2.875rem;
-  font-weight: 400;
-  margin-bottom: 20px;
-`
+import { H3 } from 'components/Text'
 
 const Button = styled.button`
   font-family: 'Bungee', cursive;
@@ -30,7 +21,9 @@ const UsedCases = () => (
   <>
     <Section paddingTop="0px" paddingBottom="30px">
       <Flex justifyContent="space-between" width="100%">
-        <Title>biergut</Title>
+        <H3 style={{ textTransform: 'uppercase', marginBottom: '20px' }}>
+          Biergut
+        </H3>
         <Button>Follow us on Instagram</Button>
       </Flex>
     </Section>
