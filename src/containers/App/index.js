@@ -5,6 +5,7 @@ import NewFlavours from 'containers/NewFlavours'
 import Features from 'containers/Features'
 import ChooseFlavour from 'containers/ChooseFlavour'
 import UsedCases from 'containers/UsedCases'
+import Footer from 'containers/Footer'
 
 const App = () => (
   <>
@@ -15,6 +16,7 @@ const App = () => (
     <Features />
     <ChooseFlavour />
     <UsedCases />
+    <Footer />
   </>
 )
 
