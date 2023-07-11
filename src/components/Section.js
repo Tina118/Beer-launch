@@ -6,20 +6,31 @@ const HeaderSection = styled.section`
 `
 
 const Head = styled.div`
-  padding: 100px 0;
+  padding: 50px 0;
   width: 100%;
   height: 100%;
 `
 
-const Section = ({ backgroundColor = '', children, ...rest }) => (
+const Section = ({ backgroundColor = '', children, style, ...rest }) => (
   <HeaderSection>
     <Head style={{ backgroundColor, ...rest }}>
       <Flex
-        style={{
-          maxWidth: '1300px',
+        sx={{
+          maxWidth: '92%',
           marginRight: 'auto',
           marginLeft: 'auto',
           position: 'relative',
+          [`@media (max-width: 1025px)`]: {
+            maxWidth: '90%',
+          },
+          [`@media (max-width: 921px)`]: {
+            maxWidth: '90%',
+          },
+          [`@media (max-width: 769px)`]: {
+            maxWidth: '80%',
+            flexDirection: 'column',
+          },
+          ...style,
         }}
       >
         {children}

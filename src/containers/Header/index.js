@@ -6,6 +6,7 @@ import { H1, H5, Description } from 'components/Text'
 
 const Button = styled.button`
   font-family: 'Bungee', cursive;
+  height: 50px;
   width: 230px;
   max-width: 230px;
   margin-right: 20px;
@@ -13,19 +14,60 @@ const Button = styled.button`
   border: 0;
   font-size: 16px;
   cursor: pointer;
+
+  @media (max-width: 1025px) {
+    margin-top: 20px;
+  }
+
+  @media (max-width: 769px) {
+    max-width: 100%;
+    width: 100%;
+    font-size: 14px;
+  }
 `
+
+const StyledDesc = styled(Description)`
+  @media (max-width: 921px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 769px) {
+    font-size: 18px;
+ `
 
 const Header = () => (
   <Section backgroundColor="#f3c242">
-    <Flex style={{ width: '50%', position: 'relative' }} flexWrap="wrap">
+    <Flex
+      sx={{
+        width: '50%',
+        position: 'relative',
+        [`@media (max-width: 769px)`]: {
+          width: '100%',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
+        },
+      }}
+      flexWrap="wrap"
+    >
       <H5>Biergut Premium Beer</H5>
       <H1>Introducing New Premium Flavors</H1>
-      <Description>
+      <StyledDesc>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco.
-      </Description>
-      <Flex>
+      </StyledDesc>
+      <Flex
+        sx={{
+          [`@media (max-width: 1025px)`]: {
+            flexDirection: 'column',
+            marginTop: '20px',
+          },
+          [`@media (max-width: 769px)`]: {
+            width: '100%',
+          },
+        }}
+      >
         <Button style={{ background: 'black', color: 'white' }}>
           Host a Party
         </Button>
@@ -33,12 +75,21 @@ const Header = () => (
       </Flex>
     </Flex>
     <Flex
-      style={{ width: '50%', position: 'relative' }}
+      sx={{
+        width: '50%',
+        position: 'relative',
+        [`@media (max-width: 769px)`]: {
+          width: '100%',
+          justifyContent: 'center',
+          marginTop: '20px',
+        },
+      }}
       flexWrap="wrap"
       justifyContent="flex-end"
-      alignItems="flex-end"
+      alignItems="center"
     >
       <img
+        style={{ height: 'auto', maxWidth: '100%' }}
         decoding="async"
         width="450"
         height="575"

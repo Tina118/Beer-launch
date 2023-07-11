@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import { Flex } from 'rebass'
 
 import Section from 'components/Section'
@@ -36,6 +37,44 @@ const ingredients = [
   },
 ]
 
+const StyledFlavourDesc = styled(Description)`
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 20px;
+
+  @media (max-width: 921px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 769px) {
+    font-size: 18px;
+  }
+`
+
+const StyledDesc = styled(Description)`
+  font-size: 25px;
+  margin-bottom: 20px;
+
+  @media (max-width: 1025px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 921px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 769px) {
+    font-size: 18px;
+  }
+`
+
+const Image = styled.img`
+  margin-right: 30px;
+  @media (max-width: 769px) {
+    margin: 0;
+  }
+`
+
 const Features = () => (
   <>
     <Section paddingTop="0px">
@@ -49,22 +88,37 @@ const Features = () => (
           Features & <br />
           Ingredients
         </H2>
-        <Description
-          style={{
-            textAlign: 'center',
-            fontSize: '25px',
-            marginBottom: '20px',
-          }}
-        >
+        <StyledFlavourDesc>
           Curabitur arcu erat, accumsan id imperdiet et, port titor at sem.
           Donec <br />
           sollici tudin molestie malesuada.
-        </Description>
+        </StyledFlavourDesc>
       </Flex>
     </Section>
-    <Section marginTop="-100px" paddingBottom="0px">
-      <Flex width="100%" style={{ margin: `0PX 85px` }} height="570px">
-        <Flex width="45%" justifyContent="center" alignItems="center">
+    <Section marginTop="-50px" paddingBottom="0px">
+      <Flex
+        width="100%"
+        sx={{
+          margin: `0pX 85px`,
+          [`@media (max-width: 1025px)`]: {
+            margin: 0,
+          },
+          [`@media (max-width: 769px)`]: {
+            flexDirection: 'column',
+          },
+        }}
+        height="100%"
+      >
+        <Flex
+          width="45%"
+          justifyContent="center"
+          alignItems="center"
+          sx={{
+            [`@media (max-width: 769px)`]: {
+              width: '100%',
+            },
+          }}
+        >
           <img
             decoding="async"
             width="350"
@@ -75,38 +129,66 @@ const Features = () => (
         <Flex
           width="55%"
           flexDirection="column"
-          style={{ padding: `70px 0px` }}
+          sx={{
+            padding: `70px 0px`,
+            [`@media (max-width: 769px)`]: {
+              width: '100%',
+              padding: `50px 0px 0px;`,
+            },
+          }}
         >
           {features.map(({ src, description }, index) => (
-            <Flex style={{ marginBottom: '40px' }} key={`feature-${index}`}>
-              <img
-                style={{ marginRight: '30px' }}
-                decoding="async"
-                width="66"
-                height="66"
-                src={src}
-              />
-              <Description style={{ fontSize: '25px', marginBottom: '20px' }}>
-                {description}
-              </Description>
+            <Flex
+              sx={{
+                marginBottom: '40px',
+                [`@media (max-width: 769px)`]: {
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                },
+              }}
+              key={`feature-${index}`}
+            >
+              <Image decoding="async" width="66" height="66" src={src} />
+              <StyledDesc>{description}</StyledDesc>
             </Flex>
           ))}
         </Flex>
       </Flex>
     </Section>
     <Section paddingTo="0px">
-      <Flex>
+      <Flex
+        sx={{
+          [`@media (max-width: 769px)`]: {
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            textAlign: 'center',
+          },
+        }}
+      >
         {ingredients.map(({ src, description }, index) => (
-          <Flex style={{ padding: `0px 80px` }} key={`ingredient-${index}`}>
-            <img
-              style={{ marginRight: '30px' }}
-              width="37"
-              height="37"
-              src={src}
-            />
-            <Description style={{ fontSize: '25px', marginBottom: '20px' }}>
-              {description}
-            </Description>
+          <Flex
+            sx={{
+              padding: `0px 80px`,
+              [`@media (max-width: 1025px)`]: {
+                padding: `0px 40px`,
+              },
+              [`@media (max-width: 921px)`]: {
+                padding: `0px 15px`,
+              },
+              [`@media (max-width: 769px)`]: {
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+              },
+            }}
+            key={`ingredient-${index}`}
+          >
+            <Image width="37" height="37" src={src} />
+            <StyledDesc>{description}</StyledDesc>
           </Flex>
         ))}
       </Flex>

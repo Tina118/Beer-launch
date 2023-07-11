@@ -10,16 +10,88 @@ const Percentage = styled.p`
   color: #7a7a7a;
   font-family: sans-serif;
   margin-top: 10px;
+
+  @media (max-width: 921px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 769px) {
+    font-size: 12px;
+  }
+`
+
+const StyledDesc = styled(Description)`
+  font-size: 25px;
+
+  @media (max-width: 921px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 769px) {
+    font-size: 18px;
+  }
+`
+
+const StyledDescFlavour = styled(Description)`
+  margin-bottom: 30px;
+
+  @media (max-width: 921px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 769px) {
+    font-size: 18px;
+  }
 `
 
 const Flavours = ({ src, color, ...rest }) => (
-  <Flex width="100%" style={{ margin: `0PX 85px` }} height="570px" {...rest}>
-    <Flex width="50%" justifyContent="center" alignItems="center">
-      <img decoding="async" width="358" height="467" src={src} />
+  <Flex
+    width="100%"
+    sx={{
+      [`@media (max-width: 1025px)`]: {
+        margin: 0,
+      },
+      [`@media (max-width: 769px)`]: {
+        margin: 0,
+        flexDirection: 'column',
+      },
+    }}
+    {...rest}
+  >
+    <Flex
+      width="50%"
+      justifyContent="center"
+      alignItems="center"
+      sx={{
+        [`@media (max-width: 769px)`]: {
+          width:'100%'
+        },
+      }}
+    >
+      <img
+        style={{
+          objectFit: 'cover',
+          height: 'auto',
+          maxWidth: '100%',
+        }}
+        decoding="async"
+        width="358"
+        height="467"
+        src={src}
+      />
     </Flex>
     <Flex
       width="50%"
-      style={{ backgroundColor: '#2b2b2b0f', padding: '70px' }}
+      sx={{
+        backgroundColor: '#2b2b2b0f',
+        padding: '70px',
+        [`@media (max-width: 921px)`]: {
+          padding: '40px',
+        },
+        [`@media (max-width: 769px)`]: {
+          width:'100%'
+        },
+      }}
       flexDirection="column"
     >
       <H6 style={{ marginBottom: '20px' }}>Biergut</H6>
@@ -32,12 +104,12 @@ const Flavours = ({ src, color, ...rest }) => (
       >
         Premium Light
       </H3>
-      <Description style={{ marginBottom: '20px' }}>
+      <StyledDescFlavour>
         Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec
         sollicitudin molestie malesuada. Curabitur arcu erat, accumsan id
         imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada.
-      </Description>
-      <Flex style={{ marginTop: '40px' }}>
+      </StyledDescFlavour>
+      <Flex>
         <Flex width="50%" flexDirection="column">
           <H6>EXTRACT</H6>
           <Percentage>11%</Percentage>
@@ -74,26 +146,46 @@ const NewFlavours = () => (
           Discover Our <br />
           New Flavors
         </H2>
-        <Description
+        <StyledDesc
           style={{
             textAlign: 'center',
-            fontSize: '25px',
             marginBottom: '20px',
           }}
         >
           Curabitur arcu erat, accumsan id imperdiet et, port titor at sem.
           Donec <br />
           sollici tudin molestie malesuada.
-        </Description>
+        </StyledDesc>
       </Flex>
     </Section>
-    <Section marginTop="-100px" paddingBottom="0px">
+    <Section
+      marginTop="-50px"
+      paddingBottom="0px"
+      style={{
+        [`@media (max-width: 921px)`]: {
+          maxWidth: '100%',
+        },
+        [`@media (max-width: 769px)`]: {
+          maxWidth: '100%',
+        },
+      }}
+    >
       <Flavours
         src="https://websitedemos.net/beer-launch-04/wp-content/uploads/sites/795/2021/04/beer-light-1.png"
         color="#f3c242"
       />
     </Section>
-    <Section marginTop="-100px">
+    <Section
+      marginTop="-50px"
+      style={{
+        [`@media (max-width: 921px)`]: {
+          maxWidth: '100%',
+        },
+        [`@media (max-width: 769px)`]: {
+          maxWidth: '100%',
+        },
+      }}
+    >
       <Flavours
         src="https://websitedemos.net/beer-launch-04/wp-content/uploads/sites/795/2021/04/beer-dark-1.png"
         color="#3a3a3a"

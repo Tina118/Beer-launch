@@ -1,3 +1,9 @@
+:root {
+  --initial-height: 330px;
+  --difference: 20px;
+  --height-factor: 10;
+}
+
 body {
   font-family: 'Bungee', cursive;
   margin: 0;

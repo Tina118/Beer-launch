@@ -10,6 +10,10 @@ const LeftPanel = styled(Flex)`
   background-size: cover;
   height: 450px;
   width: 50%;
+
+  @media (max-width: 769px) {
+    width: 100%;
+  }
 `
 
 const RightPanel = styled(Flex)`
@@ -19,6 +23,10 @@ const RightPanel = styled(Flex)`
   background-size: cover;
   height: 450px;
   width: 50%;
+
+  @media (max-width: 769px) {
+    width: 100%;
+  }
 `
 
 const Content = styled.div`
@@ -65,14 +73,20 @@ const Panel = ({ title, description, buttonText, buttonWidth }) => (
 )
 
 const Footer = () => (
-  <Flex>
+  <Flex
+    sx={{
+      [`@media (max-width: 769px)`]: {
+        flexDirection: 'column',
+      },
+    }}
+  >
     <LeftPanel>
       <Panel
         title="Hosting A Party?"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
       luctus nec ullamcorper mattis, pulvinar dapibus leo."
         buttonText="Get Biergut"
-        buttonWidth='200px'
+        buttonWidth="200px"
       />
     </LeftPanel>
     <RightPanel>
@@ -81,7 +95,7 @@ const Footer = () => (
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
       luctus nec ullamcorper mattis, pulvinar dapibus leo."
         buttonText="Contact For Stocking"
-        buttonWidth='300px'
+        buttonWidth="300px"
       />
     </RightPanel>
   </Flex>
