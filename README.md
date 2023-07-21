@@ -1,4 +1,4 @@
-#Landing Age - Beer Launch
+#**Landing Page - Beer Launch**
 
 A Simple static page react application of a beer bottle launch with attractive UI and best user experience.
 
